@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Forms</title>
+		<style>
+			body{
+				background: url("img/comrade.png") no-repeat center center fixed;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				background-size: cover;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<form action="contact_form.php" method="get" oninput="invoice.value=parseInt(total.value)+parseInt(shipping.value)">
+				<label for='name'>Name:</label> 
+				<input type='text' name='name' placeholder='Jon Snow, etc' required><br><br>
+
+				<label for='email'>Email:</label>
+				<input type='text' name='email' placeholder='name@example.com' required><br>
+
+				<hr>
+
+				<label for='message'>Message:</label><br>
+				<textarea name='message' rows='15' cols="100"></textarea><br>
+
+				<hr>
+
+				<label for='options'>Packing Requirements (select all that apply):</label><br>
+				<input type='checkbox' name="options" value="premium"> Premium<br>
+				<input type='checkbox' name="options" value="automated"> Automated<br>
+				<input type='checkbox' name="options" value="rush"> Rush<br><br>
+
+				<label for='delivery'>Delivery</label><br>
+				<input type='radio' name='delivery' value='in_store'> In Store<br>
+				<input type='radio' name='delivery' value='shipping'> Shipping<br><br>
+
+				<label for='shippingMethod'>Shipping Method:</label>
+				<select name='shippingMethod'>
+					<optgroup label='Business'>
+						<option value='bizOvernight'>Overnight</option>
+						<option value='bizGround'>Ground</option>
+					</optgroup>
+					<optgroup label="Residential">
+						<option value="resOvernight">Overnight</option>
+					    <option value="resGroung">Ground</option>
+					 </optgroup>
+				</select>
+
+				<hr>
+
+				<label for='source'>How did you hear about us?</label>
+				<select name='source'>
+					<option value='blank'>Select one</option>
+					<option value='google'>Google</option>
+					<option value='yahoo'>Yahoo</option>
+					<option value='fb'>Facebook</option>
+					<option value='twitter'>Twitter</option>
+				</select>
+
+				<hr>
+
+				<label for='subtotal'>Subtotal:</label><br>
+				<input type='text' name='total' value='0'/><br>
+
+				<label for='shipping'>Shipping:</label><br>
+				<input type='text' name='shipping' value='9' /><br>
+
+				Total for invoice: <output name='invoice' for='total tax'></output>
+
+				<hr>
+
+				<input type="submit">
+			</form>
+		</div>
+	</body>
+</html>
